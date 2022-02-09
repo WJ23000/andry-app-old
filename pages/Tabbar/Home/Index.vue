@@ -4,14 +4,18 @@
 			u-search(
 				placeholder="护肤品", 
 				v-model="keyword", 
-				:show-action="false")
+				:show-action="false",
+				:disabled="true",
+				@click="onSearch")
 		view.header
 			view.search
 				u-search(
 					placeholder="护肤品", 
 					v-model="keyword", 
 					:show-action="false",
-					bg-color="#ffffff")
+					bg-color="#ffffff",
+					:disabled="true",
+					@click="onSearch")
 			view.swiper
 				u-swiper(:list="bannerList")
 			view.grid
@@ -263,6 +267,13 @@ export default class Home extends Vue {
 		this.ajax.load = true;
 		this.ajax.loadTxt = "上拉加载更多";
 		this.ajax.page++;
+	}
+	
+	// 搜索
+	onSearch() {
+		uni.navigateTo({
+			url: "/pages/Search/Index"
+		});
 	}
 }
 </script>

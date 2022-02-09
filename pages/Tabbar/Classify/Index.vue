@@ -13,7 +13,9 @@
 				u-search.header-center(
 					placeholder="护肤品", 
 					v-model="keyword", 
-					:show-action="false")
+					:show-action="false",
+					:disabled="true",
+					@click="onSearch")
 			<!-- #ifdef APP-PLUS || H5 -->
 			template(slot="right")
 				view.icon-width-right.u-flex.u-row-center
@@ -97,6 +99,13 @@ export default class Classify extends Vue {
 					this[dataVal] = res.height;
 				})
 				.exec();
+		});
+	}
+	
+	// 搜索
+	onSearch() {
+		uni.navigateTo({
+			url: "/pages/Search/Index"
 		});
 	}
 }

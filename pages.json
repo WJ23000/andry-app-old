@@ -1,6 +1,5 @@
 {
-	"pages": [
-		{
+	"pages": [{
 			"path": "pages/Tabbar/Home/Index",
 			"style": {
 				"navigationBarTitleText": "首页",
@@ -70,6 +69,14 @@
 			"style": {
 				"navigationBarTitleText": "意见反馈"
 			}
+		}, 
+		{
+			"path": "pages/Search/Index",
+			"style": {
+				"navigationBarTitleText": "搜索",
+				"navigationStyle": "custom" // 自定义导航栏
+			}
+
 		}
 	],
 	"globalStyle": {
